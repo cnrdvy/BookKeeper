@@ -13,11 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookKeeper.Application", "s
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4219F333-5C9C-49BA-8578-34E29ACD7F9B}"
 	ProjectSection(SolutionItems) = preProject
-		..\TreasureTech\.editorconfig = ..\TreasureTech\.editorconfig
+		.editorconfig = .editorconfig
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookKeeper.UI", "src\BookKeeper.UI\BookKeeper.UI.csproj", "{CC718A29-7DB6-4975-BCC3-AAF6634A1AE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BookKeeper.UI", "src\BookKeeper.UI\BookKeeper.UI.csproj", "{CC718A29-7DB6-4975-BCC3-AAF6634A1AE0}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8F935ABE-2C3C-43A8-AB93-9B9C977D41A3}"
 EndProject

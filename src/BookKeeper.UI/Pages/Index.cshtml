@@ -1,10 +1,32 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Book Keeper";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Book Keeper</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td class="text-start">Title</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>browse</td>
+                <td class="text-start">Blue Sisters by Coco Mellors</td>
+            </tr>
+            <tr>
+                <td>browse</td>
+                <td class="text-start">The Art of Longevity by Rod Perez</td>
+            </tr>
+            <tr>
+                <td>browse</td>
+                <td class="text-start">Trippy by Ernesto Londono</td>
+            </tr>
+        </tbody>
+    </table>
 </div>

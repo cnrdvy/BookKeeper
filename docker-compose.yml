@@ -10,3 +10,15 @@ services:
     ports:
       - 5000:8080
       - 5001:8081 
+
+  bookkeeper.database:
+    image: postgres:latest
+    container_name: BookKeeper.Database
+    environment:
+      - POSTGRES_DB=bookkeeper
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432

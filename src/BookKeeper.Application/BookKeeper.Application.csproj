@@ -4,4 +4,16 @@
     <ProjectReference Include="..\BookKeeper.Domain\BookKeeper.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Books\GetBook\" />
+    <Folder Include="Books\CreateBook\" />
+    <Folder Include="Books\QueryBooks\" />
+    <Folder Include="Books\SearchBooks\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="MediatR" Version="12.3.0" />
+  </ItemGroup>
+
 </Project>

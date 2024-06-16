@@ -1,13 +1,22 @@
-var builder = WebApplication.CreateBuilder(args);
+using BookKeeper.Application;
+using BookKeeper.Infrastructure;
+using BookKeeper.UI.Extensions;
+
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorPages();
 
-var app = builder.Build();
+builder.Services.AddApplication(BookKeeper.Application.AssemblyReference.Assembly);
+builder.Services.AddInfrastructure(builder.Configuration);
+
+WebApplication app = builder.Build();
 
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
     app.UseHsts();
+
+    app.ApplyMigrations();
 }
 
 app.UseHttpsRedirection();
@@ -19,4 +28,6 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-app.Run();
+await app.RunAsync();
+
+public partial class Program;
