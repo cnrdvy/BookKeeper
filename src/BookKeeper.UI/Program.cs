@@ -15,9 +15,9 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
     app.UseHsts();
-
-    app.ApplyMigrations();
 }
+
+app.ApplyMigrations();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

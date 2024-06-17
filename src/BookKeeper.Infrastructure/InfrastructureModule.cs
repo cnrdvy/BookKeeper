@@ -21,7 +21,10 @@ public static class InfrastructureModule
         NpgsqlDataSource npgsqlDataSource = new NpgsqlDataSourceBuilder(dbConnectionString).Build();
         services.TryAddSingleton(npgsqlDataSource);
 
+        services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<BookKeeperDbContext>());
+
         services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
+        services.AddScoped<IBookRepository, BookRepository>();
 
         services.AddDbContext<BookKeeperDbContext>((sp, options) =>
             options

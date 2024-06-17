@@ -1,0 +1,41 @@
+﻿@page
+@{
+    ViewData["Title"] = "Admin - Create Book";
+    @model CreateBookModel
+}
+
+@section Scripts {
+    <partial name="@PartialNames.ValidationScripts" />
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <form method="post">
+                <div class="form-group">
+                    <label asp-for="BookModel.Title"></label>
+                    <input asp-for="BookModel.Title" class="form-control" />
+                    <span asp-validation-for="BookModel.Title"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BookModel.Description"></label>
+                    <input asp-for="BookModel.Description" class="form-control" />
+                    <span asp-validation-for="BookModel.Description"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BookModel.Authors"></label>
+                    <input asp-for="BookModel.Authors" class="form-control" />
+                    <span asp-validation-for="BookModel.Authors"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="BookModel.Price"></label>
+                    <input asp-for="BookModel.Price" class="form-control" />
+                    <span asp-validation-for="BookModel.Price"></span>
+                </div>
+                <div class="col-md-2">
+                    <input type="submit" value="Save" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

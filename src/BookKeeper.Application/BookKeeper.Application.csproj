@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <Folder Include="Books\GetBook\" />
-    <Folder Include="Books\CreateBook\" />
     <Folder Include="Books\QueryBooks\" />
     <Folder Include="Books\SearchBooks\" />
   </ItemGroup>
