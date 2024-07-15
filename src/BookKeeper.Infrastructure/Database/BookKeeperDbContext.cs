@@ -9,6 +9,8 @@ public sealed class BookKeeperDbContext(DbContextOptions<BookKeeperDbContext> op
 {
     internal DbSet<Book> Books { get; set; }
 
+    internal DbSet<User> Users { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.HasDefaultSchema(Schemas.BookKeeper);

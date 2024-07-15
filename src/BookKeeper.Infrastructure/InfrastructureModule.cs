@@ -24,7 +24,9 @@ public static class InfrastructureModule
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<BookKeeperDbContext>());
 
         services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
+
         services.AddScoped<IBookRepository, BookRepository>();
+        services.AddScoped<IUserRepository, UserRepository>();
 
         services.AddDbContext<BookKeeperDbContext>((sp, options) =>
             options
