@@ -1,8 +1,12 @@
 ﻿@page
-@model BookKeeper.UI.Pages.Admin.IndexModel
 @{
-    Layout = null;
     ViewData["Title"] = "Admin";
+    @model BookKeeper.UI.Pages.Admin.IndexModel
 }
 
-<div></div>
+<div>
+    <h2>Books</h2>
+    <ul>
+        <li><a href="./Admin/CreateBook">Create</a></li>
+    </ul>
+</div>

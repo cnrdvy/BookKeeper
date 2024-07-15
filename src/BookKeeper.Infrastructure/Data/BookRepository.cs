@@ -4,7 +4,7 @@ using BookKeeper.Infrastructure.Database;
 
 namespace BookKeeper.Infrastructure.Data;
 
-internal sealed class BookRepository(BookKeeperDbContext dbContext) : IBookRepository
+internal sealed class BookRepository(BookKeeperDbContext context) : IBookRepository
 {
-    public void Insert(Book book) => dbContext.Books.Add(book);
+    public void Insert(Book book) => context.Books.Add(book);
 }

@@ -13,13 +13,10 @@ internal sealed class GetBooksQueryHandler(IDbConnectionFactory dbConnectionFact
         GetBooksQuery request, 
         CancellationToken cancellationToken)
     {
-        await using DbConnection connection = await dbConnectionFactory.OpenConnectionAsync();
+        await using DbConnection connection = 
+            await dbConnectionFactory.OpenConnectionAsync();
 
-        const string SQL =
-            """
-                
-            """;
-
+        const string SQL = "SELECT * FROM bookkeeper.\"Books\"";
         return (await connection.QueryAsync<BookResponse>(SQL, request)).AsList();
     }
 }

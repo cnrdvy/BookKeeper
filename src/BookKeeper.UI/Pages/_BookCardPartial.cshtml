@@ -1,9 +1,11 @@
-﻿<div class="col-md-3">
+﻿@using BookKeeper.Application.Books.GetBooks
+@model BookResponse
+
+<div class="col">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Blue Sisters by Coco Mellors</h5>
-            <p class="card-body">Description...</p>
-            <a href="#" class="btn btn-primary">Open</a>
+            <h5 class="card-title">@Model.Title by @string.Join(", ", Model.Authors)</h5>
+            <a href="#" class="btn btn-primary">View</a>
         </div>
     </div>
 </div>
