@@ -1,15 +1,15 @@
-﻿namespace BookKeeper.Domain;
+﻿namespace BookKeeper.Domain.Entities;
 
 public sealed class BillingAddress
 {
     public Guid Id { get; private set; }
-    
-    public string StreetAddress { get; private set; } = string.Empty;
 
-    public string Suburb { get; private set; } = string.Empty;
-    
-    public string State { get; private set; } = string.Empty;
-    
+    public string StreetAddress { get; private set; }
+
+    public string Suburb { get; private set; }
+
+    public string State { get; private set; }
+
     public int PostCode { get; private set; }
 
     public bool IsCurrent { get; private set; }
@@ -32,8 +32,5 @@ public sealed class BillingAddress
             CustomerId = customerId
         };
 
-    public void SetIsCurrent()
-    {
-        IsCurrent = true;
-    }
+    public void SetIsCurrent(bool isCurrent) => IsCurrent = isCurrent;
 }

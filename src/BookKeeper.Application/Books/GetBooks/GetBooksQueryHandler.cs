@@ -17,6 +17,13 @@ internal sealed class GetBooksQueryHandler(IDbConnectionFactory dbConnectionFact
             await dbConnectionFactory.OpenConnectionAsync();
 
         const string SQL = "SELECT * FROM bookkeeper.\"Books\"";
-        return (await connection.QueryAsync<BookResponse>(SQL, request)).AsList();
+
+        IEnumerable<BookResponse> result1 = await connection.QueryAsync<BookResponse>(
+            SQL, 
+            request);
+        
+        List<BookResponse> result2 = result1.AsList();
+        
+        return result2;
     }
 }

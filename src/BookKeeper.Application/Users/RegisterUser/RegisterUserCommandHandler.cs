@@ -1,6 +1,7 @@
 ﻿using BookKeeper.Application.Abstractions.Data;
 using BookKeeper.Application.Abstractions.Messaging;
 using BookKeeper.Domain;
+using BookKeeper.Domain.Entities;
 
 namespace BookKeeper.Application.Users.RegisterUser;
 
