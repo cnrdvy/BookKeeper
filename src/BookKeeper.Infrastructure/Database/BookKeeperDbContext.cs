@@ -1,5 +1,6 @@
 ﻿using BookKeeper.Application.Abstractions.Data;
-using BookKeeper.Domain;
+using BookKeeper.Domain.Entities;
+using BookKeeper.Infrastructure.Database.EntityConfigurations;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookKeeper.Infrastructure.Database;
@@ -11,8 +12,13 @@ public sealed class BookKeeperDbContext(DbContextOptions<BookKeeperDbContext> op
 
     internal DbSet<User> Users { get; set; }
 
+    internal DbSet<Author> Authors { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.HasDefaultSchema(Schemas.BookKeeper);
+
+        modelBuilder.ApplyConfiguration(new BookConfiguration());
+        modelBuilder.ApplyConfiguration(new AuthorConfiguration());
     }
 }
