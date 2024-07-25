@@ -15,6 +15,11 @@ public sealed partial class CreateBookModel(ISender sender) : PageModel
 
     public async Task<IActionResult> OnPostAsync()
     {
+        if (!ModelState.IsValid)
+        {
+            return Page();
+        }
+
         Result<Guid> result = await sender.Send(new CreateBookCommand(
             BookModel.Title,
             BookModel.Description,
