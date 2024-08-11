@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using BookKeeper.Domain.ValueObjects;
 
 namespace BookKeeper.UI.Pages.ViewModels;
 

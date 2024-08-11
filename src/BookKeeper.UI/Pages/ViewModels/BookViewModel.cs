@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using BookKeeper.Domain.Entities;
+using BookKeeper.Domain.Aggregates.AuthorAggregate;
 
-namespace BookKeeper.UI.Pages.Admin;
+namespace BookKeeper.UI.Pages.ViewModels;
 
 public sealed record BookViewModel
 {

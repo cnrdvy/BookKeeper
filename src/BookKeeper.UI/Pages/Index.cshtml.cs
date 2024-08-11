@@ -1,15 +1,17 @@
 using BookKeeper.Application.Books.GetBooks;
 using BookKeeper.Domain;
+using BookKeeper.UI.Pages.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Linq;
 
 namespace BookKeeper.UI.Pages;
 
 public class IndexModel(ISender sender) : PageModel
 {
     [BindProperty]
-    public IReadOnlyCollection<BookResponse> Books { get; set; }
+    public IReadOnlyCollection<BookViewModel> Books { get; set; }
 
     public async Task OnGetAsync()
     {
@@ -18,7 +20,20 @@ public class IndexModel(ISender sender) : PageModel
 
         if (result.IsSuccess)
         {
-            Books = result.Value;
+            List<BookViewModel> books = [];
+            
+            books.AddRange(
+                from BookResponse book in result.Value
+                select new BookViewModel
+                {
+                    Id = book.Id,
+                    Title = book.Title,
+                    Description = book.Description,
+                    Price = book.Price,
+                    Authors = []
+                });
+
+            Books = books;
         }
     }
 }
