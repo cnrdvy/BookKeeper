@@ -1,5 +1,6 @@
 using BookKeeper.Application.Books.CreateBook;
 using BookKeeper.Domain;
+using BookKeeper.UI.Pages.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -27,7 +28,7 @@ public sealed partial class CreateBookModel(ISender sender) : PageModel
             BookModel.Price));
 
         return result.IsSuccess
-            ? RedirectToPage("/Admin/Index")
+            ? RedirectToPage("Index")
             : Page();
     }
 }
