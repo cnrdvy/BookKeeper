@@ -1,11 +1,17 @@
 using BookKeeper.Application;
 using BookKeeper.Infrastructure;
+using BookKeeper.UI;
 using BookKeeper.UI.Extensions;
+using Serilog;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddRazorPages();
+builder.Host
+    .UseSerilog(
+        (context, loggerConfiguration) =>
+            loggerConfiguration.ReadFrom.Configuration(context.Configuration));
 
+builder.Services.AddPresentation();
 builder.Services.AddApplication(BookKeeper.Application.AssemblyReference.Assembly);
 builder.Services.AddInfrastructure(builder.Configuration);
 
