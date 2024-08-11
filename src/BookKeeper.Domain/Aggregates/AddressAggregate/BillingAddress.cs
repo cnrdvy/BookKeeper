@@ -1,6 +1,6 @@
-﻿namespace BookKeeper.Domain.Entities;
+﻿namespace BookKeeper.Domain.Aggregates.AddressAggregate;
 
-public sealed class PostalAddress
+public sealed class BillingAddress
 {
     public Guid Id { get; private set; }
 
@@ -16,7 +16,7 @@ public sealed class PostalAddress
 
     public Guid CustomerId { get; private set; }
 
-    public static PostalAddress Create(
+    public static BillingAddress Create(
         string streetAddress,
         string suburb,
         string state,

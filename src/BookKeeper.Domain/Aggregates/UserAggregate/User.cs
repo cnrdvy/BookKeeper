@@ -1,6 +1,4 @@
-﻿using BookKeeper.Domain.ValueObjects;
-
-namespace BookKeeper.Domain.Entities;
+﻿namespace BookKeeper.Domain.Aggregates.UserAggregate;
 
 public sealed class User
 {

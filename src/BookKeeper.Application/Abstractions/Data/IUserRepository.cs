@@ -1,4 +1,4 @@
-﻿using BookKeeper.Domain.Entities;
+﻿using BookKeeper.Domain.Aggregates.UserAggregate;
 
 namespace BookKeeper.Application.Abstractions.Data;
 

@@ -1,5 +1,5 @@
 ﻿using BookKeeper.Application.Abstractions.Messaging;
-using BookKeeper.Domain.Entities;
+using BookKeeper.Domain.Aggregates.AuthorAggregate;
 
 namespace BookKeeper.Application.Books.CreateBook;
 

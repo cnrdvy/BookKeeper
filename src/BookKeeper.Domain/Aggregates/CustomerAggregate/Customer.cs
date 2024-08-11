@@ -1,4 +1,4 @@
-﻿namespace BookKeeper.Domain.Entities;
+﻿namespace BookKeeper.Domain.Aggregates.CustomerAggregate;
 
 public sealed class Customer
 {
@@ -11,13 +11,13 @@ public sealed class Customer
     public string Email { get; private set; }
 
     public static Customer Create(
-        string firstName, 
-        string lastName, 
+        string firstName,
+        string lastName,
         string email) => new()
-    {
-        Id = Guid.NewGuid(),
-        FirstName = firstName,
-        LastName = lastName,
-        Email = email
-    };
+        {
+            Id = Guid.NewGuid(),
+            FirstName = firstName,
+            LastName = lastName,
+            Email = email
+        };
 }

@@ -1,4 +1,4 @@
-﻿using BookKeeper.Domain.Entities;
+﻿using BookKeeper.Domain.Aggregates.AuthorAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -10,10 +10,6 @@ internal sealed class AuthorConfiguration : IEntityTypeConfiguration<Author>
     {
         builder.HasKey(a => a.Id);
 
-        builder.Property(b => b.FirstName).HasMaxLength(50).IsRequired();
-
-        builder.Property(b => b.LastName).HasMaxLength(50).IsRequired();
-
-        builder.HasMany(b => b.Books).WithMany(a => a.Authors);
+        builder.HasMany(a => a.Books).WithMany(a => a.Authors);
     }
 }

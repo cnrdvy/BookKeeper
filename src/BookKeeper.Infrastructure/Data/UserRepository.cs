@@ -1,5 +1,5 @@
 ﻿using BookKeeper.Application.Abstractions.Data;
-using BookKeeper.Domain.Entities;
+using BookKeeper.Domain.Aggregates.UserAggregate;
 using BookKeeper.Infrastructure.Database;
 
 namespace BookKeeper.Infrastructure.Data;

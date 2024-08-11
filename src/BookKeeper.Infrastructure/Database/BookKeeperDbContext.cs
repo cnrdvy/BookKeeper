@@ -1,5 +1,7 @@
 ﻿using BookKeeper.Application.Abstractions.Data;
-using BookKeeper.Domain.Entities;
+using BookKeeper.Domain.Aggregates.AuthorAggregate;
+using BookKeeper.Domain.Aggregates.BookAggregate;
+using BookKeeper.Domain.Aggregates.UserAggregate;
 using BookKeeper.Infrastructure.Database.EntityConfigurations;
 using Microsoft.EntityFrameworkCore;
 

@@ -1,7 +1,7 @@
 ﻿using BookKeeper.Application.Abstractions.Data;
 using BookKeeper.Application.Abstractions.Messaging;
 using BookKeeper.Domain;
-using BookKeeper.Domain.Entities;
+using BookKeeper.Domain.Aggregates.BookAggregate;
 
 namespace BookKeeper.Application.Books.CreateBook;
 
@@ -14,7 +14,7 @@ internal sealed class CreateBookCommandHandler(
         CancellationToken cancellationToken)
     {
         var book = Book.Create(
-            new(request.Title), 
+            request.Title, 
             request.Description, 
             request.Authors, 
             request.Price);
@@ -22,6 +22,6 @@ internal sealed class CreateBookCommandHandler(
         bookRepository.Insert(book);
         await unitOfWork.SaveChangesAsync(cancellationToken);
 
-        return book.Id;
+        return (Guid)book.Id;
     }
 }

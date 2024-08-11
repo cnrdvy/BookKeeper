@@ -1,4 +1,6 @@
-﻿namespace BookKeeper.Domain.Entities;
+﻿using BookKeeper.Domain.Aggregates.BookAggregate;
+
+namespace BookKeeper.Domain.Aggregates.AuthorAggregate;
 
 public sealed class Author
 {
